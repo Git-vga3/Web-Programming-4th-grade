@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,46 +7,56 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    line-height: 1.6;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f9fafb;
+    color: #2d3748;
+    line-height: 1.5;
+    font-weight: 400;
 }
 
 .app-header {
-    background-color: #4a90e2;
+    background: linear-gradient(135deg, #6366f1, #818cf8);
     color: white;
     text-align: center;
     padding: 1.5rem 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 
 .app-header h1 {
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 .container {
     max-width: 1200px;
     margin: 2rem auto;
-    padding: 1rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    background: linear-gradient(to bottom, #f0f4ff 0%, #f9fafb 100%);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.06);
+    position: relative;
+    z-index: 1;
 }
 
-/* Форма добавления задачи */
 .add-task-form {
-    background: white;
+    background: #fefcf9;
     padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    border: 1px solid #f0e6d7;
 }
 
 .add-task-form h2 {
     margin-bottom: 1rem;
-    color: #333;
+    color: #2d3748;
     font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .form-group {
@@ -55,63 +67,83 @@ body {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
+    color: #4a5568;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
     font-size: 1rem;
-    transition: border-color 0.2s;
+    background-color: #f8fafc;
+    font-family: inherit;
+    transition: all 0.25s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #4a90e2;
-    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    background-color: white;
 }
 
 .btn-add {
     width: 100%;
     padding: 0.75rem;
-    background-color: #4a90e2;
+    background: linear-gradient(to right, #10b981, #059669);
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     font-size: 1rem;
+    font-weight: 500;
+    font-family: inherit;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
 }
 
 .btn-add:hover {
-    background-color: #3a7bc8;
+    background: linear-gradient(to right, #059669, #047857);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.4);
 }
 
-/* Список задач */
+.btn-add:active {
+    transform: translateY(0);
+}
+
 .tasks-list {
-    background: white;
+    background: #fefcf9;
     padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    border: 1px solid #f0e6d7;
 }
 
 .tasks-list h2 {
     margin-bottom: 1rem;
-    color: #333;
+    color: #2d3748;
     font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .task-card {
-    background: #fafafa;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 1rem;
+    background: #fdfbf8;
+    border: 1px solid #f2eadf;
+    border-radius: 10px;
+    padding: 1.25rem;
     margin-bottom: 1rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02), inset 0 1px 0 rgba(255, 255, 255, 0.8);
     position: relative;
+    transition: all 0.2s ease;
+}
+
+.task-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .task-card:last-child {
@@ -119,42 +151,46 @@ body {
 }
 
 .task-title {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: #2c3e50;
+    color: #1a202c;
 }
 
 .task-description {
     font-size: 0.95rem;
-    color: #7f8c8d;
+    color: #4a5568;
     margin-bottom: 0.75rem;
     white-space: pre-line;
+    line-height: 1.5;
 }
 
 .delete-btn {
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    background: #e74c3c;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: #ef4444;
     color: white;
     border: none;
-    border-radius: 4px;
-    padding: 0.25rem 0.5rem;
-    font-size: 0.85rem;
+    border-radius: 6px;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: inherit;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: all 0.2s ease;
 }
 
 .delete-btn:hover {
-    background: #c0392b;
+    background: #dc2626;
+    transform: scale(1.05);
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .container {
-        padding: 0.5rem;
+        padding: 1rem;
         margin: 1rem auto;
+        border-radius: 10px;
     }
 
     .app-header h1 {
@@ -164,35 +200,43 @@ body {
     .add-task-form,
     .tasks-list {
         padding: 1rem;
+        border-radius: 10px;
     }
 
     .form-group input,
     .form-group textarea {
-        padding: 0.5rem;
+        padding: 0.6rem;
         font-size: 0.95rem;
     }
 
     .btn-add {
-        padding: 0.5rem;
+        padding: 0.65rem;
         font-size: 0.95rem;
     }
 
+    .task-card {
+        padding: 1rem;
+    }
+
     .task-title {
-        font-size: 1rem;
+        font-size: 1.05rem;
     }
 
     .task-description {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
     }
 }
 
 @media (max-width: 480px) {
     .container {
         margin: 0.5rem;
+        padding: 0.75rem;
+        border-radius: 8px;
     }
 
     .app-header {
-        padding: 1rem 0.5rem;
+        padding: 1rem 0.75rem;
+        border-radius: 0 0 10px 10px;
     }
 
     .app-header h1 {
@@ -205,11 +249,11 @@ body {
     }
 
     .task-card {
-        padding: 0.75rem;
+        padding: 0.85rem;
     }
 
     .delete-btn {
-        padding: 0.2rem 0.4rem;
+        padding: 0.25rem 0.5rem;
         font-size: 0.75rem;
     }
 }
